@@ -254,3 +254,100 @@ git remote add origin https://github.com/jalalalkn/Mariam.quotex.git
 git branch -M main
 git push -u origin main
 exit
+cd ~
+rm -rf mariamqu_project
+rm -rf old_mariamqu*
+rm -f /sdcard/Download/mariamqu_project*.zip
+termux-setup-storage
+cp mariamqu_project_fixed_v2.zip $HOME
+cd ~
+unzip mariamqu_project_fixed_v2.zip
+cd mariamqu_project
+rm -rf .git
+git init
+git add .
+git commit -m "clean fixed version"
+git branch -M main
+git remote add origin https://github.com/jalalalkn/NEW_REPO_NAME.git
+git push -u origin main
+git remote add origin https://github.com/jalalalkn/Mariam.quotex.get
+git remote set-url origin https://github.com/jalalalkn/Mariam.quotex.get.git
+git push -u origin main
+git remote set-url origin https://github.com/jalalalkn/Mariam.quotex.git
+git push -u origin main
+git config --global http.postBuffer 524288000
+git config --global core.compression 0
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999
+git push -u origin main
+cd ~/mariamqu_project
+rm -f .git-credentials
+echo ".git-credentials" >> .gitignore
+git add .gitignore
+git add -A
+git commit --amend --no-edit
+git filter-repo --sensitive-data-removal --invert-paths --path .git-credentials
+git push --force-with-lease -u origin main
+exit
+termux-setup-storage
+pkg install git -y
+cd /sdcard/Download
+cp mariamqu_project_fixed_v2.zip ~/mariamqu_project.zip
+cd ~
+mkdir mariamqu_upload
+cd mariamqu_upload
+git init
+git branch -M main
+cp ~/mariamqu_project.zip .
+git add mariamqu_project.zip
+git commit -m "add zip file"
+git remote add origin https://github.com/jalalalkn/Mariam_quotex.git
+git push -u origin mainy
+git branch -M main
+git push -u origin main
+git add .
+git commit -m "first upload"
+git branch -M main
+git push -u origin main
+git status
+git add .
+git commit -m "first upload"
+git branch -M main
+git push -u origin main
+ls
+termux-setup-storage
+find . -name "*.zip"
+ls
+ls /sdcard/Download
+cp /sdcard/Download/QuotexVisionAI_fixed.zip ~/mariamqu_upload/mariamqu_project.zip
+cd ~/mariamqu_upload
+ls
+git add .
+git commit -m "upload project zip"
+git branch -M main
+git push -u origin main
+git add codemagic.yaml
+git commit -m "fix codemagic yaml"
+git push
+git pull --rebase origin main
+git push
+exit
+ls
+rm -rf mariamqu.py                 mariamqu_upload  storage
+mariamqu_project_final.zip  signals.db
+ls
+rm -rf mariamqu_project_final.zip
+rm -rf signals db
+ls
+rm -rf signals.db
+ls
+nano maroqu.py
+ls
+python maroqu.py
+nano maroqu.py
+rm -rf maroqu.py
+ls
+nano maroqu.py
+ls
+nano maroqu.py
+python maroqu.py
