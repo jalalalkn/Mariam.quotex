@@ -22,4 +22,3 @@ workflows:
       email:
         recipients:
           - jalalalkn4@gmail.com
-        include_artifacts: true
