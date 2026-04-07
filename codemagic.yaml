@@ -1,0 +1,25 @@
+workflows:
+  android-apk-workflow:
+    name: Build Android APK for Mariam
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        FLUTTER_BUILD_MODE: release
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Clean build
+        script: |
+          flutter clean
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - jalalalkn4@gmail.com
+        include_artifacts: true
