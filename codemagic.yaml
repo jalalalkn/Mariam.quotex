@@ -4,8 +4,7 @@ workflows:
     max_build_duration: 60
     environment:
       flutter: stable
-      vars:
-        FLUTTER_BUILD_MODE: release
+      working_directory: Mariam.quotex   # <--- ضع هنا اسم المجلد الصحيح
     scripts:
       - name: Install dependencies
         script: |
